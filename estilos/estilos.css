@@ -1,0 +1,580 @@
+/*
+Fuentes:
+
+    Alata:   font-family: 'Alata', sans-serif;
+    Josefin: font-family: 'Josefin Sans', sans-serif;
+
+Colores:
+
+    - White: hsl(0, 0%, 100%)
+    - Black: hsl(0, 0%, 0%)
+    - Dark Gray: hsl(0, 0%, 55%)
+    - Very Dark Gray: hsl(0, 0%, 41%)
+
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* max-width: 1440px; */
+  font-size: 15px;
+  min-width: fit-content;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:
+    "logo   menu"
+    "title  menu";
+  background-image: url("/img/desktop/image-hero.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-clip: border-box;
+  padding: 40px 160px 160px 160px;
+}
+
+.header .logo {
+  grid-area: logo;
+}
+
+.header .menu {
+  grid-area: menu;
+}
+
+.header .title {
+  grid-area: title;
+  width: 93%;
+  height: 205px;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 23px;
+  text-transform: uppercase;
+  color: hsl(0, 0%, 100%);
+  letter-spacing: 4px;
+  border: 2px solid hsl(0, 0%, 100%);
+  padding: 35px;
+  margin-top: 6em;
+}
+
+.header nav {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.header nav ul li {
+  list-style: none;
+  display: inline;
+}
+
+.header nav ul li > a {
+  padding-left: 2em;
+  text-decoration: none;
+  font-family: "Josefin Sans", sans-serif;
+  color: hsl(0, 0%, 100%);
+  text-decoration: underline 0.3em rgba(255, 255, 255, 0);
+  transition: text-decoration-color 300ms;
+}
+
+.header nav ul li > a:hover {
+  text-decoration-color: rgba(255, 255, 255, 1);
+}
+
+.info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas: "foto   main-info";
+  padding: 158px;
+  position: relative;
+}
+
+.info .foto {
+  grid-area: foto;
+  width: 100%;
+  height: 367px;
+}
+
+.info .main-info {
+  grid-area: main-info;
+  width: 149%;
+  height: 242px;
+  position: absolute;
+  top: 34%;
+  left: -21%;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  background-color: hsl(0, 0%, 100%);
+  padding: 70px;
+  align-items: center;
+}
+
+.info .main-info .info-title {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 45px;
+  color: hsl(0, 0%, 0%);
+  text-transform: uppercase;
+  padding-top: 1.5em;
+  padding-bottom: 0.5em;
+  padding-right: 2em;
+}
+
+.info .main-info .info-paragraph {
+  font-family: "Alata", sans-serif;
+  color: hsl(0, 0%, 55%);
+  padding-right: 186px;
+  padding-bottom: 7px;
+}
+
+.creations {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas:
+    "titulo   titulo      titulo        boton"
+    "earth    arcade      soccer        grid"
+    "above    borealis    curiosity     fisheye";
+  gap: 20px;
+  position: relative;
+  padding: 40px 140px 150px 150px;
+  color: hsl(0, 0%, 100%);
+}
+
+.creations .creations-title {
+  grid-area: titulo;
+  font-family: "Josefin Sans", sans-serif;
+  text-transform: uppercase;
+  font-size: 48px;
+  color: hsl(0, 0%, 0%);
+  margin-bottom: 1em;
+}
+
+.creations .boton {
+  grid-area: boton;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.creations .see-all {
+  width: 160px;
+  height: 40px;
+  display: inline-block;
+  border: none;
+  padding: 1rem 2rem;
+  margin: 0;
+  text-decoration: none;
+  background: hsl(0, 0%, 100%);
+  color: hsl(0, 0%, 55%);
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: 1px solid hsl(0, 0%, 55%);
+}
+
+.creations .see-all:hover {
+  background: hsl(0, 0%, 0%);
+  color: hsl(0, 0%, 100%);
+  transition: 0.5s;
+}
+
+.creations .above {
+  display: flex;
+  align-items: flex-end;
+  transition: transform 0.5s ease;
+}
+
+.creations .above > h3 {
+  font-family: "Josefin Sans", sans-serif;
+  color: #fff;
+  text-transform: uppercase;
+  padding-right: 82px;
+  font-size: 32px;
+  margin-bottom: 1em;
+  margin-left: 17px;
+}
+
+.creations .earth,
+.creations .arcade,
+.creations .soccer,
+.creations .grid,
+.creations .above,
+.creations .borealis,
+.creations .curiosity,
+.creations .fisheye {
+  width: 260px;
+  height: 449px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-clip: border-box;
+  display: flex;
+  align-items: flex-end;
+  transition: transform 0.5s ease;
+  cursor: pointer;
+}
+
+.creations .earth:hover,
+.creations .arcade:hover,
+.creations .soccer:hover,
+.creations .grid:hover,
+.creations .above:hover,
+.creations .borealis:hover,
+.creations .curiosity:hover,
+.creations .fisheye:hover {
+  transform: scale(1.1);
+}
+
+.creations .earth > h3,
+.creations .arcade > h3,
+.creations .soccer > h3,
+.creations .grid > h3,
+.creations .borealis > h3,
+.creations .curiosity > h3,
+.creations .fisheye > h3 {
+  font-family: "Josefin Sans", sans-serif;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 33px;
+  margin-bottom: 1em;
+  padding-left: 27px;
+  padding-right: 82px;
+}
+
+.creations .earth {
+  grid-area: earth;
+  background-image: url("/img/desktop/image-deep-earth.jpg");
+}
+
+.creations .arcade {
+  grid-area: arcade;
+  background-image: url("/img/desktop/image-night-arcade.jpg");
+}
+
+.creations .soccer {
+  grid-area: soccer;
+  background-image: url("/img/desktop/image-soccer-team.jpg");
+}
+
+.creations .grid {
+  grid-area: grid;
+  background-image: url("/img/desktop/image-grid.jpg");
+}
+
+.creations .above {
+  grid-area: above;
+  background-image: url("/img/desktop/image-from-above.jpg");
+}
+
+.creations .borealis {
+  grid-area: borealis;
+  background-image: url("/img/desktop/image-pocket-borealis.jpg");
+}
+
+.creations .curiosity {
+  grid-area: curiosity;
+  background-image: url("/img/desktop/image-curiosity.jpg");
+}
+
+.creations .fisheye {
+  grid-area: fisheye;
+  background-image: url("/img/desktop/image-fisheye.jpg");
+}
+
+.footer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:
+    "logo           social-media"
+    "footer-menu    derechos";
+  background-color: hsl(0, 0%, 0%);
+  padding: 50px 100px;
+}
+
+.footer .logo {
+  grid-area: logo;
+}
+
+.footer .footer-menu {
+  grid-area: footer-menu;
+  margin-top: 2em;
+}
+
+.footer .footer-menu ul li {
+  list-style: none;
+  display: inline;
+}
+
+.footer .footer-menu ul li > a {
+  text-decoration: none;
+  font-family: "Josefin Sans", sans-serif;
+  color: hsl(0, 0%, 100%);
+  padding-right: 2em;
+  text-decoration: underline 0.3em rgba(255, 255, 255, 0);
+  transition: text-decoration-color 300ms;
+}
+
+.footer .footer-menu ul li > a:hover {
+  text-decoration-color: rgba(255, 255, 255, 1);
+}
+
+.footer .social-media {
+  grid-area: social-media;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.footer .social-media .fab {
+  color: hsl(0, 0%, 100%);
+  font-size: 33px;
+  margin-left: 29px;
+}
+
+.footer .derechos {
+  grid-area: derechos;
+  font-family: "Josefin Sans", sans-serif;
+  color: hsl(0, 0%, 100%);
+  margin-top: 2em;
+  word-spacing: 1px;
+  letter-spacing: 2px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+@media screen and (max-width: 1024px) {
+  .header {
+    width: 100%;
+  }
+
+  .header .menu {
+    width: 400px;
+    position: absolute;
+    left: 51%;
+  }
+
+  .header .title {
+    width: 460px;
+  }
+
+  .info .main-info {
+    position: absolute;
+    top: 67px;
+    height: 300px;
+  }
+
+  .info .main-info .info-title {
+    font-size: 35px;
+    margin-top: 2em;
+  }
+
+  .info .main-info .info-paragraph {
+    width: 630px;
+    padding-left: 124px;
+    padding-right: 87px;
+  }
+
+  .creations {
+    position: relative;
+    right: 3%;
+  }
+
+  .creations .earth,
+  .creations .arcade,
+  .creations .soccer,
+  .creations .grid,
+  .creations .above,
+  .creations .borealis,
+  .creations .curiosity,
+  .creations .fisheye {
+    width: 189px;
+    height: 333px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    min-width: 768px;
+  }
+
+  .header {
+    width: 100%;
+    padding: 50px;
+  }
+
+  .header .title {
+    width: 670px;
+    height: 233px;
+    word-wrap: break-word;
+    word-spacing: 225px;
+  }
+
+  .header .menu {
+    position: absolute;
+    left: 21em;
+  }
+
+  .info {
+    grid-template-columns: 1fr;
+    grid-template-areas: "foto" "main-info";
+    padding: 100px;
+  }
+
+  .info .main-info {
+    position: absolute;
+    top: -132px;
+    height: 300px;
+    width: 785px;
+  }
+
+  .info .foto {
+    grid-area: foto;
+    width: 105%;
+    height: 520px;
+    padding: 0;
+    background-size: cover;
+    background-clip: border-box;
+    background-position: center;
+    background-image: url("/img/mobile/image-interactive.jpg");
+  }
+
+  .info .main-info .info-title {
+    text-align: center;
+    font-size: 35px;
+    margin-top: -1em;
+    padding-left: 174px;
+    padding-right: 114px;
+  }
+
+  .info .main-info .info-paragraph {
+    padding-left: 91px;
+    padding-right: 40px;
+    text-align: center;
+  }
+
+  .creations {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "titulo"
+      "earth"
+      "arcade"
+      "soccer"
+      "grid"
+      "above"
+      "borealis"
+      "curiosity"
+      "fisheye"
+      "boton";
+    gap: 12px;
+    position: relative;
+    padding: 50px;
+  }
+
+  .creations .creations-title {
+    margin-top: 2em;
+    margin-bottom: 4em;
+    text-align: center;
+    padding-left: 1.2em;
+  }
+
+  .creations .earth,
+  .creations .arcade,
+  .creations .soccer,
+  .creations .grid,
+  .creations .above,
+  .creations .borealis,
+  .creations .curiosity,
+  .creations .fisheye {
+    width: 100%;
+    height: 250px;
+    width: 102%;
+    position: relative;
+    left: 53%;
+    transform: translate(-50%, -50%);
+  }
+
+  .creations .earth {
+    background-image: url("/img/mobile/image-deep-earth.jpg");
+  }
+
+  .creations .arcade {
+    background-image: url("/img/mobile/image-night-arcade.jpg");
+  }
+
+  .creations .soccer {
+    background-image: url("/img/mobile/image-soccer-team.jpg");
+  }
+
+  .creations .grid {
+    background-image: url("/img/mobile/image-grid.jpg");
+  }
+
+  .creations .above {
+    background-image: url("/img/mobile/image-from-above.jpg");
+  }
+
+  .creations .borealis {
+    background-image: url("/img/mobile/image-pocket-borealis.jpg");
+  }
+
+  .creations .curiosity {
+    background-image: url("/img/mobile/image-curiosity.jpg");
+  }
+
+  .creations .fisheye {
+    background-image: url("/img/mobile/image-fisheye.jpg");
+  }
+
+  .creations .see-all {
+    position: absolute;
+    left: 56%;
+    bottom: 5em;
+    transform: translate(-50%, -50%);
+    width: 70%;
+  }
+
+  .footer {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "logo"
+      "footer-menu"
+      "social-media"
+      "derechos";
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer .footer-menu ul li {
+    display: flex;
+    justify-content: center;
+  }
+
+  .footer .footer-menu ul li > a {
+    margin-bottom: 1em;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  body {
+    min-width: 170%;
+  }
+
+  .header .title {
+    width: 620px;
+  }
+
+  .info .main-info {
+    padding: 0;
+    width: 661px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  body {
+    min-width: 715px;
+  }
+}
